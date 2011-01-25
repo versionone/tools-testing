@@ -1,4 +1,6 @@
 #comments-start
+http://www.autoitscript.com
+
 This is a simple script used in reproducing the behavior found in a defect we had (D-05296).
 
 WinActivate performs a partial match on the Title that your browser currently has. This must be set correctly in order to launch the appropriate browser window. 
