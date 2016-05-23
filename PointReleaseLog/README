@@ -1,0 +1,4 @@
+For release notes, we need a list of workitems that were included in the point release about to go out.
+Bash script will output a file called point_release_commits.txt containing workitem IDs that were tagged on commits between the last point release and now. 
+Run from the Core repo directory and output file will show up there as well.
+When we drop support or add support for a new branch, update the file by either removing the dropped branch or adding the new one as appropriate.
