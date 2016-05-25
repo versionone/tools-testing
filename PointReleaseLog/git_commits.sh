@@ -1,23 +1,26 @@
-printf "Finding assets in latest 15.3 build\n" >point_release_commits.txt
-git checkout 15.3
+BRANCH="15.3"
+printf "Finding workitems in latest $BRANCH build since last point release\n" >point_release_commits.txt
+git checkout $BRANCH
 git pull --ff-only
 TAG=$(git describe --abbrev=0 --tags)
 echo $TAG
-printf "git log $TAG..15.3 | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq\n" >>point_release_commits.txt
-git log $TAG..15.3 | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq >>point_release_commits.txt 2>&1
+printf "git log $TAG..$BRANCH | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq\n" >>point_release_commits.txt
+git log $TAG..$BRANCH | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq >>point_release_commits.txt 2>&1
 
-printf "\nFinding assets in latest 16.0 build\n" >>point_release_commits.txt
-git checkout 16.0
+BRANCH="16.0"
+printf "\nFinding workitems in latest $BRANCH build since last point release\n" >>point_release_commits.txt
+git checkout $BRANCH
 git pull --ff-only
 TAG=$(git describe --abbrev=0 --tags)
 echo $TAG
-printf "git log $TAG..16.0 | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq\n" >>point_release_commits.txt
-git log $TAG..16.0 | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq >>point_release_commits.txt 2>&1
+printf "git log $TAG..$BRANCH | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq\n" >>point_release_commits.txt
+git log $TAG..$BRANCH | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq >>point_release_commits.txt 2>&1
 
-printf "\nFinding assets in latest 16.1 build\n" >>point_release_commits.txt
-git checkout 16.1
+BRANCH="16.1"
+printf "\nFinding workitems in latest $BRANCH build since last point release\n" >>point_release_commits.txt
+git checkout $BRANCH
 git pull --ff-only
 TAG=$(git describe --abbrev=0 --tags)
 echo $TAG
-printf "git log $TAG..16.1 | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq\n" >>point_release_commits.txt
-git log $TAG..16.1 | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq >>point_release_commits.txt 2>&1
+printf "git log $TAG..$BRANCH | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq\n" >>point_release_commits.txt
+git log $TAG..$BRANCH | grep -o -E '[A-Z]{1,2}-[0-9]{5}' | sort |uniq >>point_release_commits.txt 2>&1
